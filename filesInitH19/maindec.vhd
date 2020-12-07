@@ -4,7 +4,8 @@ entity maindec is -- main control decoder
     port (op: in STD_LOGIC_VECTOR (5 downto 0);
             funct: in STD_LOGIC_VECTOR (5 downto 0);
 			memtoreg, memwrite: out STD_LOGIC;
-			branch, alusrc: out STD_LOGIC;
+            branch out STD_LOGIC;
+            alusrc: out STD_LOGIC_VECTOR (1 downto 0);
 			regdst, regwrite: out STD_LOGIC;
             jump: out STD_LOGIC;
             jumpReg: out STD_LOGIC;
@@ -16,12 +17,13 @@ architecture behave of maindec is
 begin
 process(op, funct) begin
 	case op is
-		when "000000" => controls <= "0110000010"; -- Rtyp
-		when "100011" => controls <= "0101001000"; -- LW
-		when "101011" => controls <= "0001010000"; -- SW
-		when "000100" => controls <= "0000100001"; -- BEQ
-		when "001000" => controls <= "0101000000"; -- ADDI
-		when "000010" => controls <= "0000000100"; -- J
+		when "000000" => controls <= "01100000010"; -- Rtyp
+		when "100011" => controls <= "01001001000"; -- LW
+		when "101011" => controls <= "00001010000"; -- SW
+		when "000100" => controls <= "00000100001"; -- BEQ
+		when "001000" => controls <= "01001000000"; -- ADDI
+        when "000010" => controls <= "00000000100"; -- J
+        when "001100" => controls <= "01010000100"; --Andi
 		when others => controls <= "---------"; -- illegal op
     end case;
     case funct is
@@ -29,10 +31,10 @@ process(op, funct) begin
     end case;
 end process;
 
-    jumpReg <= controls(9);
-	regwrite <= controls(8);
-	regdst <= controls(7);
-	alusrc <= controls(6);
+    jumpReg <= controls(10);
+	regwrite <= controls(9);
+	regdst <= controls(8);
+	alusrc <= controls(7 downto 6);
 	branch <= controls(5);
 	memwrite <= controls(4);
 	memtoreg <= controls(3);
