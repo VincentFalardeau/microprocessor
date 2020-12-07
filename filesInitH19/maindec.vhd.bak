@@ -4,7 +4,7 @@ entity maindec is -- main control decoder
     port (op: in STD_LOGIC_VECTOR (5 downto 0);
             funct: in STD_LOGIC_VECTOR (5 downto 0);
 			memtoreg, memwrite: out STD_LOGIC;
-            branch: out STD_LOGIC;
+            branch out STD_LOGIC;
             alusrc: out STD_LOGIC_VECTOR (1 downto 0);
 			regdst, regwrite: out STD_LOGIC;
             jump: out STD_LOGIC;
@@ -13,9 +13,9 @@ entity maindec is -- main control decoder
 end;
 
 architecture behave of maindec is
-	signal controls: STD_LOGIC_VECTOR(10 downto 0);
+	signal controls: STD_LOGIC_VECTOR(8 downto 0);
 begin
-process(op) begin
+process(op, funct) begin
 	case op is
 		when "000000" => controls <= "01100000010"; -- Rtyp
 		when "100011" => controls <= "01001001000"; -- LW
@@ -24,11 +24,10 @@ process(op) begin
 		when "001000" => controls <= "01001000000"; -- ADDI
         when "000010" => controls <= "00000000100"; -- J
         when "001100" => controls <= "01010000100"; --Andi
-		when others => controls <= "-----------"; -- illegal op
+		when others => controls <= "---------"; -- illegal op
     end case;
     case funct is
-        when "001000" => controls <= "11100000100"; -- JR
-		  	when others => controls <= controls; -- illegal funct
+        when "001000" => controls <= "1110000010"; -- JR
     end case;
 end process;
 
