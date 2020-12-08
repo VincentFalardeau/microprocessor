@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projet
-Tue Dec  8 12:01:48 2020
+Tue Dec  8 14:33:24 2020
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,35 +10,7 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: datapath:dp|flopr:pcreg
- 13. Parameter Settings for User Entity Instance: datapath:dp|mux2:pcjrmux
- 14. Parameter Settings for User Entity Instance: datapath:dp|mux2:pcbrmux
- 15. Parameter Settings for User Entity Instance: datapath:dp|mux2:pcmux
- 16. Parameter Settings for User Entity Instance: datapath:dp|mux4:wrmux
- 17. Parameter Settings for User Entity Instance: datapath:dp|mux4:wrmux|mux2:lowmux
- 18. Parameter Settings for User Entity Instance: datapath:dp|mux4:wrmux|mux2:highmux
- 19. Parameter Settings for User Entity Instance: datapath:dp|mux4:wrmux|mux2:finalmux
- 20. Parameter Settings for User Entity Instance: datapath:dp|mux2:wrdatamux
- 21. Parameter Settings for User Entity Instance: datapath:dp|mux2:resmux
- 22. Parameter Settings for User Entity Instance: datapath:dp|mux4:srcbmux
- 23. Parameter Settings for User Entity Instance: datapath:dp|mux4:srcbmux|mux2:lowmux
- 24. Parameter Settings for User Entity Instance: datapath:dp|mux4:srcbmux|mux2:highmux
- 25. Parameter Settings for User Entity Instance: datapath:dp|mux4:srcbmux|mux2:finalmux
- 26. Port Connectivity Checks: "datapath:dp|alu:mainalu"
- 27. Port Connectivity Checks: "datapath:dp|mux4:srcbmux"
- 28. Port Connectivity Checks: "datapath:dp|mux4:wrmux"
- 29. Port Connectivity Checks: "datapath:dp|mux2:pcmux"
- 30. Port Connectivity Checks: "datapath:dp|adder:pcadd1"
- 31. Port Connectivity Checks: "datapath:dp"
- 32. Elapsed Time Per Partition
- 33. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -64,20 +36,20 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec  8 12:01:48 2020           ;
+; Analysis & Synthesis Status        ; Failed - Tue Dec  8 14:33:24 2020               ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; projet                                          ;
 ; Top-level Entity Name              ; proc_mips                                       ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 2,481                                           ;
-;     Total combinational functions  ; 1,489                                           ;
-;     Dedicated logic registers      ; 1,054                                           ;
-; Total registers                    ; 1054                                            ;
-; Total pins                         ; 163                                             ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
+; Total logic elements               ; N/A until Partition Merge                       ;
+;     Total combinational functions  ; N/A until Partition Merge                       ;
+;     Dedicated logic registers      ; N/A until Partition Merge                       ;
+; Total registers                    ; N/A until Partition Merge                       ;
+; Total pins                         ; N/A until Partition Merge                       ;
+; Total virtual pins                 ; N/A until Partition Merge                       ;
+; Total memory bits                  ; N/A until Partition Merge                       ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
+; Total PLLs                         ; N/A until Partition Merge                       ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -177,348 +149,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                           ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                    ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
-; ../filesInitH19/zeroext.vhd      ; yes             ; User VHDL File  ; /home/vince/Desktop/IFT1227/devoir4/filesInitH19/zeroext.vhd    ;         ;
-; ../filesInitH19/sl2.vhd          ; yes             ; User VHDL File  ; /home/vince/Desktop/IFT1227/devoir4/filesInitH19/sl2.vhd        ;         ;
-; ../filesInitH19/signext.vhd      ; yes             ; User VHDL File  ; /home/vince/Desktop/IFT1227/devoir4/filesInitH19/signext.vhd    ;         ;
-; ../filesInitH19/regfile.vhd      ; yes             ; User VHDL File  ; /home/vince/Desktop/IFT1227/devoir4/filesInitH19/regfile.vhd    ;         ;
-; ../filesInitH19/proc_mips.vhd    ; yes             ; User VHDL File  ; /home/vince/Desktop/IFT1227/devoir4/filesInitH19/proc_mips.vhd  ;         ;
-; ../filesInitH19/mux4.vhd         ; yes             ; User VHDL File  ; /home/vince/Desktop/IFT1227/devoir4/filesInitH19/mux4.vhd       ;         ;
-; ../filesInitH19/mux2.vhd         ; yes             ; User VHDL File  ; /home/vince/Desktop/IFT1227/devoir4/filesInitH19/mux2.vhd       ;         ;
-; ../filesInitH19/maindec.vhd      ; yes             ; User VHDL File  ; /home/vince/Desktop/IFT1227/devoir4/filesInitH19/maindec.vhd    ;         ;
-; ../filesInitH19/flopr.vhd        ; yes             ; User VHDL File  ; /home/vince/Desktop/IFT1227/devoir4/filesInitH19/flopr.vhd      ;         ;
-; ../filesInitH19/datapath.vhd     ; yes             ; User VHDL File  ; /home/vince/Desktop/IFT1227/devoir4/filesInitH19/datapath.vhd   ;         ;
-; ../filesInitH19/controller.vhd   ; yes             ; User VHDL File  ; /home/vince/Desktop/IFT1227/devoir4/filesInitH19/controller.vhd ;         ;
-; ../filesInitH19/aludec.vhd       ; yes             ; User VHDL File  ; /home/vince/Desktop/IFT1227/devoir4/filesInitH19/aludec.vhd     ;         ;
-; ../filesInitH19/alu.vhd          ; yes             ; User VHDL File  ; /home/vince/Desktop/IFT1227/devoir4/filesInitH19/alu.vhd        ;         ;
-; ../filesInitH19/adder.vhd        ; yes             ; User VHDL File  ; /home/vince/Desktop/IFT1227/devoir4/filesInitH19/adder.vhd      ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
-
-
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 2,481 ;
-;                                             ;       ;
-; Total combinational functions               ; 1489  ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 1363  ;
-;     -- 3 input functions                    ; 95    ;
-;     -- <=2 input functions                  ; 31    ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 1429  ;
-;     -- arithmetic mode                      ; 60    ;
-;                                             ;       ;
-; Total registers                             ; 1054  ;
-;     -- Dedicated logic registers            ; 1054  ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 163   ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 1054  ;
-; Total fan-out                               ; 9106  ;
-; Average fan-out                             ; 3.37  ;
-+---------------------------------------------+-------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                       ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
-; |proc_mips                 ; 1489 (0)          ; 1054 (0)     ; 0           ; 0            ; 0       ; 0         ; 163  ; 0            ; |proc_mips                                        ; work         ;
-;    |controller:cont|       ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |proc_mips|controller:cont                        ; work         ;
-;       |maindec:md|         ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |proc_mips|controller:cont|maindec:md             ; work         ;
-;    |datapath:dp|           ; 1486 (0)          ; 1054 (0)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |proc_mips|datapath:dp                            ; work         ;
-;       |adder:pcadd1|       ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |proc_mips|datapath:dp|adder:pcadd1               ; work         ;
-;       |alu:mainalu|        ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |proc_mips|datapath:dp|alu:mainalu                ; work         ;
-;       |flopr:pcreg|        ; 26 (26)           ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |proc_mips|datapath:dp|flopr:pcreg                ; work         ;
-;       |mux4:srcbmux|       ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |proc_mips|datapath:dp|mux4:srcbmux               ; work         ;
-;          |mux2:finalmux|   ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |proc_mips|datapath:dp|mux4:srcbmux|mux2:finalmux ; work         ;
-;       |mux4:wrmux|         ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |proc_mips|datapath:dp|mux4:wrmux                 ; work         ;
-;          |mux2:finalmux|   ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |proc_mips|datapath:dp|mux4:wrmux|mux2:finalmux   ; work         ;
-;       |regfile:rf|         ; 1378 (1378)       ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |proc_mips|datapath:dp|regfile:rf                 ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                           ;
-+----------------------------------------------------+---------------------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal             ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------------------+------------------------+
-; controller:cont|maindec:md|controls[11]            ; controller:cont|maindec:md|Mux1 ; yes                    ;
-; controller:cont|maindec:md|controls[2]             ; controller:cont|maindec:md|Mux1 ; yes                    ;
-; controller:cont|maindec:md|controls[10]            ; controller:cont|maindec:md|Mux1 ; yes                    ;
-; controller:cont|maindec:md|controls[8]             ; controller:cont|maindec:md|Mux1 ; yes                    ;
-; Number of user-specified and inferred latches = 4  ;                                 ;                        ;
-+----------------------------------------------------+---------------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; datapath:dp|flopr:pcreg|q[0,1]        ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 2 ;                                        ;
-+---------------------------------------+----------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 1054  ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 26    ;
-; Number of registers using Asynchronous Clear ; 30    ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1024  ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |proc_mips|datapath:dp|flopr:pcreg|q[31]                ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |proc_mips|datapath:dp|flopr:pcreg|q[3]                 ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |proc_mips|datapath:dp|mux4:srcbmux|mux2:finalmux|y[11] ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |proc_mips|datapath:dp|mux4:wrmux|mux2:finalmux|y[2]    ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |proc_mips|datapath:dp|mux4:srcbmux|mux2:finalmux|y[30] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |proc_mips|datapath:dp|mux2:wrdatamux|y[1]              ;
-; 64:1               ; 30 bits   ; 1260 LEs      ; 240 LEs              ; 1020 LEs               ; No         ; |proc_mips|datapath:dp|alu:mainalu|Mux5                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
-
-
-+----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:dp|flopr:pcreg ;
-+----------------+-------+---------------------------------------------+
-; Parameter Name ; Value ; Type                                        ;
-+----------------+-------+---------------------------------------------+
-; width          ; 32    ; Signed Integer                              ;
-+----------------+-------+---------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:dp|mux2:pcjrmux ;
-+----------------+-------+----------------------------------------------+
-; Parameter Name ; Value ; Type                                         ;
-+----------------+-------+----------------------------------------------+
-; width          ; 32    ; Signed Integer                               ;
-+----------------+-------+----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:dp|mux2:pcbrmux ;
-+----------------+-------+----------------------------------------------+
-; Parameter Name ; Value ; Type                                         ;
-+----------------+-------+----------------------------------------------+
-; width          ; 32    ; Signed Integer                               ;
-+----------------+-------+----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:dp|mux2:pcmux ;
-+----------------+-------+--------------------------------------------+
-; Parameter Name ; Value ; Type                                       ;
-+----------------+-------+--------------------------------------------+
-; width          ; 32    ; Signed Integer                             ;
-+----------------+-------+--------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:dp|mux4:wrmux ;
-+----------------+-------+--------------------------------------------+
-; Parameter Name ; Value ; Type                                       ;
-+----------------+-------+--------------------------------------------+
-; width          ; 5     ; Signed Integer                             ;
-+----------------+-------+--------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:dp|mux4:wrmux|mux2:lowmux ;
-+----------------+-------+--------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                   ;
-+----------------+-------+--------------------------------------------------------+
-; width          ; 5     ; Signed Integer                                         ;
-+----------------+-------+--------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:dp|mux4:wrmux|mux2:highmux ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; width          ; 5     ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:dp|mux4:wrmux|mux2:finalmux ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; width          ; 5     ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:dp|mux2:wrdatamux ;
-+----------------+-------+------------------------------------------------+
-; Parameter Name ; Value ; Type                                           ;
-+----------------+-------+------------------------------------------------+
-; width          ; 32    ; Signed Integer                                 ;
-+----------------+-------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:dp|mux2:resmux ;
-+----------------+-------+---------------------------------------------+
-; Parameter Name ; Value ; Type                                        ;
-+----------------+-------+---------------------------------------------+
-; width          ; 32    ; Signed Integer                              ;
-+----------------+-------+---------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:dp|mux4:srcbmux ;
-+----------------+-------+----------------------------------------------+
-; Parameter Name ; Value ; Type                                         ;
-+----------------+-------+----------------------------------------------+
-; width          ; 32    ; Signed Integer                               ;
-+----------------+-------+----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:dp|mux4:srcbmux|mux2:lowmux ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; width          ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:dp|mux4:srcbmux|mux2:highmux ;
-+----------------+-------+-----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                      ;
-+----------------+-------+-----------------------------------------------------------+
-; width          ; 32    ; Signed Integer                                            ;
-+----------------+-------+-----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:dp|mux4:srcbmux|mux2:finalmux ;
-+----------------+-------+------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                       ;
-+----------------+-------+------------------------------------------------------------+
-; width          ; 32    ; Signed Integer                                             ;
-+----------------+-------+------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "datapath:dp|alu:mainalu"                                                                                                                     ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; shamt ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------+
-; Port Connectivity Checks: "datapath:dp|mux4:srcbmux" ;
-+------+-------+----------+----------------------------+
-; Port ; Type  ; Severity ; Details                    ;
-+------+-------+----------+----------------------------+
-; d3   ; Input ; Info     ; Stuck at GND               ;
-+------+-------+----------+----------------------------+
-
-
-+----------------------------------------------------+
-; Port Connectivity Checks: "datapath:dp|mux4:wrmux" ;
-+------+-------+----------+--------------------------+
-; Port ; Type  ; Severity ; Details                  ;
-+------+-------+----------+--------------------------+
-; d3   ; Input ; Info     ; Stuck at VCC             ;
-+------+-------+----------+--------------------------+
-
-
-+----------------------------------------------------+
-; Port Connectivity Checks: "datapath:dp|mux2:pcmux" ;
-+----------+-------+----------+----------------------+
-; Port     ; Type  ; Severity ; Details              ;
-+----------+-------+----------+----------------------+
-; d1[1..0] ; Input ; Info     ; Stuck at GND         ;
-+----------+-------+----------+----------------------+
-
-
-+------------------------------------------------------+
-; Port Connectivity Checks: "datapath:dp|adder:pcadd1" ;
-+----------+-------+----------+------------------------+
-; Port     ; Type  ; Severity ; Details                ;
-+----------+-------+----------+------------------------+
-; b[31..3] ; Input ; Info     ; Stuck at GND           ;
-; b[1..0]  ; Input ; Info     ; Stuck at GND           ;
-; b[2]     ; Input ; Info     ; Stuck at VCC           ;
-+----------+-------+----------+------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "datapath:dp"                                                                                                 ;
-+----------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                                                  ;
-+----------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; overflow ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; nal      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:02     ;
-+----------------+--------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Dec  8 12:01:44 2020
+    Info: Processing started: Tue Dec  8 14:33:23 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projet -c projet
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vince/Desktop/IFT1227/devoir4/filesInitH19/mux2simple.vhd
+    Info (12022): Found design unit 1: mux2simple-behave2
+    Info (12023): Found entity 1: mux2simple
 Info (12021): Found 2 design units, including 1 entities, in source file /home/vince/Desktop/IFT1227/devoir4/filesInitH19/zeroext.vhd
     Info (12022): Found design unit 1: zeroext-behave
     Info (12023): Found entity 1: zeroext
@@ -573,102 +215,13 @@ Info (12021): Found 2 design units, including 1 entities, in source file /home/v
 Info (12021): Found 2 design units, including 1 entities, in source file /home/vince/Desktop/IFT1227/devoir4/filesInitH19/adder.vhd
     Info (12022): Found design unit 1: adder-behave
     Info (12023): Found entity 1: adder
-Info (12127): Elaborating entity "proc_mips" for the top level hierarchy
-Info (12128): Elaborating entity "controller" for hierarchy "controller:cont"
-Info (12128): Elaborating entity "maindec" for hierarchy "controller:cont|maindec:md"
-Warning (10492): VHDL Process Statement warning at maindec.vhd(32): signal "funct" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at maindec.vhd(34): signal "controls" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at maindec.vhd(20): inferring latch(es) for signal or variable "controls", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "controls[0]" at maindec.vhd(20)
-Info (10041): Inferred latch for "controls[1]" at maindec.vhd(20)
-Info (10041): Inferred latch for "controls[2]" at maindec.vhd(20)
-Info (10041): Inferred latch for "controls[3]" at maindec.vhd(20)
-Info (10041): Inferred latch for "controls[4]" at maindec.vhd(20)
-Info (10041): Inferred latch for "controls[5]" at maindec.vhd(20)
-Info (10041): Inferred latch for "controls[6]" at maindec.vhd(20)
-Info (10041): Inferred latch for "controls[7]" at maindec.vhd(20)
-Info (10041): Inferred latch for "controls[8]" at maindec.vhd(20)
-Info (10041): Inferred latch for "controls[9]" at maindec.vhd(20)
-Info (10041): Inferred latch for "controls[10]" at maindec.vhd(20)
-Info (10041): Inferred latch for "controls[11]" at maindec.vhd(20)
-Info (10041): Inferred latch for "controls[12]" at maindec.vhd(20)
-Info (12128): Elaborating entity "aludec" for hierarchy "controller:cont|aludec:ad"
-Info (12128): Elaborating entity "datapath" for hierarchy "datapath:dp"
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(12): used implicit default value for signal "nal" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(70): used implicit default value for signal "foo" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Info (12128): Elaborating entity "flopr" for hierarchy "datapath:dp|flopr:pcreg"
-Info (12128): Elaborating entity "adder" for hierarchy "datapath:dp|adder:pcadd1"
-Info (12128): Elaborating entity "sl2" for hierarchy "datapath:dp|sl2:immsh"
-Info (12128): Elaborating entity "mux2" for hierarchy "datapath:dp|mux2:pcjrmux"
-Info (12128): Elaborating entity "regfile" for hierarchy "datapath:dp|regfile:rf"
-Info (12128): Elaborating entity "mux4" for hierarchy "datapath:dp|mux4:wrmux"
-Info (12128): Elaborating entity "mux2" for hierarchy "datapath:dp|mux4:wrmux|mux2:lowmux"
-Info (12128): Elaborating entity "signext" for hierarchy "datapath:dp|signext:se"
-Info (12128): Elaborating entity "zeroext" for hierarchy "datapath:dp|zeroext:ze"
-Info (12128): Elaborating entity "mux4" for hierarchy "datapath:dp|mux4:srcbmux"
-Info (12128): Elaborating entity "alu" for hierarchy "datapath:dp|alu:mainalu"
-Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "datapath:dp|regfile:rf|mem" is uninferred due to asynchronous read logic
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "controller:cont|maindec:md|controls[8]" merged with LATCH primitive "controller:cont|maindec:md|controls[11]"
-    Info (13026): Duplicate LATCH primitive "controller:cont|maindec:md|controls[10]" merged with LATCH primitive "controller:cont|maindec:md|controls[11]"
-    Info (13026): Duplicate LATCH primitive "controller:cont|maindec:md|controls[2]" merged with LATCH primitive "controller:cont|maindec:md|controls[11]"
-Warning (13012): Latch controller:cont|maindec:md|controls[11] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal instr[0]
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "pc[0]" is stuck at GND
-    Warning (13410): Pin "pc[1]" is stuck at GND
-    Warning (13410): Pin "memwrite" is stuck at GND
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 38 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "instr[26]"
-    Warning (15610): No output dependent on input pin "instr[27]"
-    Warning (15610): No output dependent on input pin "instr[28]"
-    Warning (15610): No output dependent on input pin "instr[29]"
-    Warning (15610): No output dependent on input pin "instr[30]"
-    Warning (15610): No output dependent on input pin "instr[31]"
-    Warning (15610): No output dependent on input pin "readdata[2]"
-    Warning (15610): No output dependent on input pin "readdata[3]"
-    Warning (15610): No output dependent on input pin "readdata[4]"
-    Warning (15610): No output dependent on input pin "readdata[5]"
-    Warning (15610): No output dependent on input pin "readdata[6]"
-    Warning (15610): No output dependent on input pin "readdata[7]"
-    Warning (15610): No output dependent on input pin "readdata[8]"
-    Warning (15610): No output dependent on input pin "readdata[9]"
-    Warning (15610): No output dependent on input pin "readdata[10]"
-    Warning (15610): No output dependent on input pin "readdata[11]"
-    Warning (15610): No output dependent on input pin "readdata[12]"
-    Warning (15610): No output dependent on input pin "readdata[13]"
-    Warning (15610): No output dependent on input pin "readdata[14]"
-    Warning (15610): No output dependent on input pin "readdata[15]"
-    Warning (15610): No output dependent on input pin "readdata[16]"
-    Warning (15610): No output dependent on input pin "readdata[17]"
-    Warning (15610): No output dependent on input pin "readdata[18]"
-    Warning (15610): No output dependent on input pin "readdata[19]"
-    Warning (15610): No output dependent on input pin "readdata[20]"
-    Warning (15610): No output dependent on input pin "readdata[21]"
-    Warning (15610): No output dependent on input pin "readdata[22]"
-    Warning (15610): No output dependent on input pin "readdata[23]"
-    Warning (15610): No output dependent on input pin "readdata[24]"
-    Warning (15610): No output dependent on input pin "readdata[25]"
-    Warning (15610): No output dependent on input pin "readdata[26]"
-    Warning (15610): No output dependent on input pin "readdata[27]"
-    Warning (15610): No output dependent on input pin "readdata[28]"
-    Warning (15610): No output dependent on input pin "readdata[29]"
-    Warning (15610): No output dependent on input pin "readdata[30]"
-    Warning (15610): No output dependent on input pin "readdata[31]"
-    Warning (15610): No output dependent on input pin "readdata[0]"
-    Warning (15610): No output dependent on input pin "readdata[1]"
-Info (21057): Implemented 2676 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 66 input pins
-    Info (21059): Implemented 97 output pins
-    Info (21061): Implemented 2513 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 52 warnings
-    Info: Peak virtual memory: 628 megabytes
-    Info: Processing ended: Tue Dec  8 12:01:48 2020
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+Error (10309): VHDL Interface Declaration error in controller.vhd(50): interface object "bnal" of mode out cannot be read. Change object mode to buffer. File: /home/vince/Desktop/IFT1227/devoir4/filesInitH19/controller.vhd Line: 50
+Error (10577): VHDL error at controller.vhd(50): actual port "bnal" of mode "out" cannot be associated with formal port "s" of mode "in" File: /home/vince/Desktop/IFT1227/devoir4/filesInitH19/controller.vhd Line: 50
+Error (10600): VHDL error at controller.vhd(50): can't read value of interface object "bnal" of mode OUT File: /home/vince/Desktop/IFT1227/devoir4/filesInitH19/controller.vhd Line: 50
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 3 errors, 1 warning
+    Error: Peak virtual memory: 587 megabytes
+    Error: Processing ended: Tue Dec  8 14:33:25 2020
+    Error: Elapsed time: 00:00:02
+    Error: Total CPU time (on all processors): 00:00:02
 
 

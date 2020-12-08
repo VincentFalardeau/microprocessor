@@ -6,7 +6,7 @@ entity datapath is -- MIPS datapath
             memtoreg, pcsrc: in STD_LOGIC;
             alusrc: in STD_LOGIC_VECTOR (1 downto 0);
 			regdst: in STD_LOGIC_VECTOR (1 downto 0);
-			regwrite, jump, jumpReg, dataSrc: in STD_LOGIC;
+			writeSignal, jump, jumpReg, dataSrc, bnal: in STD_LOGIC;
 			alucontrol: in STD_LOGIC_VECTOR (5 downto 0);
             zero, overflow: out STD_LOGIC;
             nal: out STD_LOGIC;
@@ -56,6 +56,11 @@ architecture struct of datapath is
 				s: in STD_LOGIC;
                 y: out STD_LOGIC_VECTOR (width-1 downto 0));
     end component;
+	 component mux2simple
+		port(	d0, d1: in STD_LOGIC;
+				s: in STD_LOGIC;
+                y: out STD_LOGIC);
+    end component;
     component mux4 generic (width: integer);
         port(	d0, d1, d2, d3: in STD_LOGIC_VECTOR (width-1 downto 0);
                 s: in  STD_LOGIC_VECTOR(1 downto 0);
@@ -81,8 +86,9 @@ begin
    pcjrmux: mux2 generic map(32) port map(pcplus4, result, jumpReg, pcnextjr);
    pcbrmux: mux2 generic map(32) port map(pcnextjr, pcbranch, pcsrc, pcnextbr);
 	pcmux: mux2 generic map(32) port map(pcnextbr, pcjump, jump, pcnext);
+	
 -- register file logic
-	rf: regfile port map(clk, regwrite, instr(25 downto 21),instr(20 downto 16), writereg, dataReg, srca, writedata);
+	rf: regfile port map(clk, writeSignal, instr(25 downto 21),instr(20 downto 16), writereg, dataReg, srca, writedata);
 	wrmux: mux4 generic map(5) port map(instr(20 downto 16),instr(15 downto 11),foo,"11111", regdst, writereg);
 	wrdatamux: mux2 generic map(32) port map(result, pcPlus4, dataSrc, dataReg);
 	resmux: mux2 generic map(32) port map(aluout, readdata, memtoreg, result);

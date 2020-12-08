@@ -6,10 +6,12 @@ entity controller is -- single cycle control decoder
             pcsrc: out STD_LOGIC;
             alusrc: out STD_LOGIC_VECTOR (1 downto 0);
 				regdst: out STD_LOGIC_VECTOR (1 downto 0);
-			   regwrite: out STD_LOGIC;
+			   regwrite: in STD_LOGIC;
             jump: out STD_LOGIC;
             jumpReg: out STD_LOGIC;
 				dataSrc: out STD_LOGIC;
+				bnal: out STD_LOGIC;
+				writeSignal: out STD_LOGIC;
 			alucontrol: out STD_LOGIC_VECTOR (5 downto 0));
 end;
 
@@ -25,6 +27,7 @@ architecture struct of controller is
                 jump: out STD_LOGIC;
                 jumpReg: out STD_LOGIC;
 					 dataSrc: out STD_LOGIC;
+					 bnal: out STD_LOGIC;
 				aluop: out STD_LOGIC_VECTOR (1 downto 0));
 	end component;
 	component aludec
@@ -32,10 +35,17 @@ architecture struct of controller is
 				aluop: in STD_LOGIC_VECTOR (1 downto 0);
 				alucontrol: out STD_LOGIC_VECTOR (5 downto 0));
 	end component;
+	 component mux2simple
+		port(	d0, d1: in STD_LOGIC;
+				s: in STD_LOGIC;
+                y: out STD_LOGIC);
+    end component;
+	
 	signal aluop: STD_LOGIC_VECTOR (1 downto 0);
 	signal branch: STD_LOGIC;
 begin
-	md: maindec port map (op, funct, memtoreg, memwrite, branch, alusrc, regdst, regwrite, jump, jumpReg, dataSrc, aluop);
+	md: maindec port map (op, funct, memtoreg, memwrite, branch, alusrc, regdst, writeSignal, jump, jumpReg, dataSrc, bnal, aluop);
 	ad: aludec port map (funct, aluop, alucontrol);
 	pcsrc <= branch and zero;
+	bnalmux: mux2simple port map(regwrite, zero, bnal, writeSignal);
 end;

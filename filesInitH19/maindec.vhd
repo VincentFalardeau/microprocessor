@@ -11,31 +11,33 @@ entity maindec is -- main control decoder
             jump: out STD_LOGIC;
             jumpReg: out STD_LOGIC;
 				dataSrc: out STD_LOGIC;
+				bnal: out STD_LOGIC;
 			aluop: out STD_LOGIC_VECTOR (1 downto 0));
 end;
 
 architecture behave of maindec is
-	signal controls: STD_LOGIC_VECTOR(12 downto 0);
+	signal controls: STD_LOGIC_VECTOR(13 downto 0);
 begin
 process(op) begin
 	case op is
-		when "000000" => controls <= "0010100000010"; -- Rtyp
-		when "100011" => controls <= "0010001001000"; -- LW
-		when "101011" => controls <= "0000001010000"; -- SW
-		when "000100" => controls <= "0000000100001"; -- BEQ
-		when "001000" => controls <= "0010001000000"; -- ADDI
-        when "000010" => controls <= "0000000000100"; -- J
-        when "001100" => controls <= "0010010000010"; --Andi
-		  when "001101" => controls <= "1011100000100";--JAL
-        when "100100" => controls <= "1001111100000"; -- BNAL
-		when others => controls <= "-------------"; -- illegal op
+		when "000000" => controls <= "00010100000010"; -- Rtyp
+		when "100011" => controls <= "00010001001000"; -- LW
+		when "101011" => controls <= "00000001010000"; -- SW
+		when "000100" => controls <= "00000000100001"; -- BEQ
+		when "001000" => controls <= "00010001000000"; -- ADDI
+        when "000010" => controls <= "00000000000100"; -- J
+        when "001100" => controls <= "00010010000010"; --Andi
+		  when "001101" => controls <= "01011100000100";--JAL
+        when "100100" => controls <= "11001111100000"; -- BNAL
+		when others => controls <= "--------------"; -- illegal op
     end case;
     case funct is
-        when "001000" => controls <= "0110100000100"; -- JR
+        when "001000" => controls <= "00110100000100"; -- JR
 		  	when others => controls <= controls; -- illegal funct
     end case;
 end process;
 
+	bnal <= controls(13);
 	dataSrc <= controls(12);
    jumpReg <= controls(11);
 	regwrite <= controls(10);
