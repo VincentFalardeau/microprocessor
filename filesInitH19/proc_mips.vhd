@@ -16,16 +16,17 @@ architecture struct of proc_mips is
 				memtoreg, memwrite: out STD_LOGIC;
 				pcsrc: out STD_LOGIC;
 				alusrc: out STD_LOGIC_VECTOR(1 downto 0);
-				regdst, regwrite: out STD_LOGIC;
-				jump: out STD_LOGIC;
+				regdst: out STD_LOGIC_VECTOR (1 downto 0);
+				regwrite: out STD_LOGIC;
+				jump, jumpReg, dataSrc: out STD_LOGIC;
 				alucontrol: out STD_LOGIC_VECTOR (5 downto 0));
 	end component;
 	component datapath
 		port (clk, reset: in STD_LOGIC;
 				memtoreg, pcsrc: in STD_LOGIC;
 				alusrc: in STD_LOGIC_VECTOR(1 downto 0);
-				regdst: in STD_LOGIC;
-				regwrite, jump: in STD_LOGIC;
+				regdst: in STD_LOGIC_VECTOR (1 downto 0);
+				regwrite, jump, jumpReg, dataSrc: in STD_LOGIC;
 				alucontrol: in STD_LOGIC_VECTOR (5 downto 0);
 				zero: out STD_LOGIC;
 				pc: buffer STD_LOGIC_VECTOR (31 downto 0);
@@ -35,12 +36,13 @@ architecture struct of proc_mips is
 	end component;
 	signal memtoreg: STD_LOGIC;
 	signal alusrc: STD_LOGIC_VECTOR(1 downto 0);
-	signal regdst, regwrite, jump, pcsrc: STD_LOGIC; 
+	signal regdst: STD_LOGIC_VECTOR (1 downto 0);
+	signal regwrite, jump, jumpReg, dataSrc, pcsrc: STD_LOGIC; 
 	signal zero: STD_LOGIC;
 	signal alucontrol: STD_LOGIC_VECTOR (5 downto 0);
 begin
 	cont: controller port map (instr (31 downto 26), instr(5 downto 0), zero, memtoreg, 
-										memwrite, pcsrc, alusrc, regdst, regwrite, jump, alucontrol);
-	dp: datapath port map (	clk, reset, memtoreg, pcsrc, alusrc,regdst, regwrite, jump, 
+										memwrite, pcsrc, alusrc, regdst, regwrite, jump, jumpReg, dataSrc, alucontrol);
+	dp: datapath port map (	clk, reset, memtoreg, pcsrc, alusrc,regdst, regwrite, jump, jumpReg, dataSrc,
 									alucontrol, zero, pc, instr, aluout, writedata, readdata);
 end;
