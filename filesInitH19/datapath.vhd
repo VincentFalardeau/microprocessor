@@ -72,7 +72,7 @@ architecture struct of datapath is
 	
 begin
 -- next PC logic
-    zerob <= X"00000000";
+   zerob <= X"00000000";
 	pcjump <= pcplus4 (31 downto 28) & instr (25 downto 0) & "00";
 	pcreg: flopr generic map(32) port map(clk, reset, pcnext, pc);
 	pcadd1: adder port map(pc, X"00000004", pcplus4);
