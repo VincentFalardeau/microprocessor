@@ -22,6 +22,7 @@ begin
 			when "100110" => tmp <= a xor b; --38 xor
             when "100111" => tmp <= not (a or b); --39 nor 
             when "001000" => tmp <= a; --jr
+            
 			when "101010" => --SLT
 					if diff(31) = '1' then 
 						tmp <= X"00000001"; 

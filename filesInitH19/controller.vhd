@@ -25,14 +25,14 @@ architecture struct of controller is
                 jump: out STD_LOGIC;
                 jumpReg: out STD_LOGIC;
 					 dataSrc: out STD_LOGIC;
-				aluop: out STD_LOGIC_VECTOR (1 downto 0));
+				aluop: out STD_LOGIC_VECTOR (2 downto 0));
 	end component;
 	component aludec
 		port (funct: in STD_LOGIC_VECTOR (5 downto 0);
-				aluop: in STD_LOGIC_VECTOR (1 downto 0);
+				aluop: in STD_LOGIC_VECTOR (2 downto 0);
 				alucontrol: out STD_LOGIC_VECTOR (5 downto 0));
 	end component;
-	signal aluop: STD_LOGIC_VECTOR (1 downto 0);
+	signal aluop: STD_LOGIC_VECTOR (2 downto 0);
 	signal branch: STD_LOGIC;
 begin
 	md: maindec port map (op, funct, memtoreg, memwrite, branch, alusrc, regdst, regwrite, jump, jumpReg, dataSrc, aluop);
