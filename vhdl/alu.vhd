@@ -6,7 +6,7 @@ entity alu is
 	port (	a, b: in STD_LOGIC_VECTOR(31 downto 0);
 			f: in STD_LOGIC_VECTOR (5 downto 0);
 			shamt: in STD_LOGIC_VECTOR (4 downto 0);
-            z, o : out STD_LOGIC;
+			z, o : out STD_LOGIC;
 			y: out STD_LOGIC_VECTOR(31 downto 0):= X"00000000");
 end;
 architecture behave of alu is
@@ -20,9 +20,7 @@ begin
 			when "100100" => tmp <= a and b; --36 and
 			when "100101" => tmp <= a or b; --37 or
 			when "100110" => tmp <= a xor b; --38 xor
-            when "100111" => tmp <= not (a or b); --39 nor 
-            when "001000" => tmp <= a; --jr
-            
+			when "100111" => tmp <= not (a or b); --39 nor 
 			when "101010" => --SLT
 					if diff(31) = '1' then 
 						tmp <= X"00000001"; 
@@ -33,10 +31,8 @@ begin
 			when others => tmp <= X"00000000"; 
 		end case;
 	end process;
-    
-    --z = 1 si (on est en beq (f = sub) et que tmp = 0) ou (on est en bnal (f = add) et que tmp < 0)
-    z <= '1' when (tmp = X"00000000" and f = "100010") or (tmp < 0 and f = "100000") else '0';
-
+	
+	z <= '1' when tmp = X"00000000" else '0';
 	o <= '1' when a(31) = b(31) and (a(31) /= tmp(31)) else '0';
 	y <= tmp;
 	
