@@ -3,9 +3,9 @@ IEEE.STD_LOGIC_ARITH.all;
 
 entity datapath is -- MIPS datapath
 	port(	clk, reset: in STD_LOGIC;
-			memtoreg, pcsrc: in STD_LOGIC;
-			alusrc : in STD_LOGIC_VECTOR(1 downto 0);
-			regdst: in STD_LOGIC;
+			memtoreg : in STD_LOGIC_VECTOR(1 downto 0);
+			pcsrc: in STD_LOGIC;
+			alusrc, regdst : in STD_LOGIC_VECTOR(1 downto 0);
 			regwrite: in STD_LOGIC;
 			jump: in STD_LOGIC_VECTOR(1 downto 0);
 			alucontrol: in STD_LOGIC_VECTOR (5 downto 0);
@@ -77,8 +77,8 @@ begin
 	pcmux: mux4 generic map(32) port map(pcnextbr, pcjump, srca, X"00000000", jump, pcnext);
 -- register file logic
 	rf: regfile port map(clk, regwrite, instr(25 downto 21),instr(20 downto 16), writereg, result, srca, writedata);
-	wrmux: mux2 generic map(5) port map(instr(20 downto 16),instr(15 downto 11), regdst, writereg);
-	resmux: mux2 generic map(32) port map(aluout, readdata, memtoreg, result);
+	wrmux: mux4 generic map(5) port map(instr(20 downto 16),instr(15 downto 11), "11111", "00000", regdst, writereg);
+	resmux: mux4 generic map(32) port map(aluout, readdata, pcplus4, X"00000000", memtoreg, result);
 	se: signext port map(instr(15 downto 0), signimm);
 	ze: zeroext port map(instr(15 downto 0), zeroimm);
 -- ALU logic
