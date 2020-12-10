@@ -1,5 +1,5 @@
 Flow report for projet
-Thu Dec 10 09:45:45 2020
+Thu Dec 10 10:13:29 2020
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Thu Dec 10 09:45:45 2020           ;
+; Flow Status                        ; Successful - Thu Dec 10 10:13:29 2020           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; projet                                          ;
-; Top-level Entity Name              ; proc_mips                                       ;
+; Top-level Entity Name              ; datapath                                        ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
 ; Total logic elements               ; 2,282 / 33,216 ( 7 % )                          ;
-;     Total combinational functions  ; 1,837 / 33,216 ( 6 % )                          ;
+;     Total combinational functions  ; 1,940 / 33,216 ( 6 % )                          ;
 ;     Dedicated logic registers      ; 1,056 / 33,216 ( 3 % )                          ;
 ; Total registers                    ; 1056                                            ;
-; Total pins                         ; 163 / 475 ( 34 % )                              ;
+; Total pins                         ; 178 / 475 ( 37 % )                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 483,840 ( 0 % )                             ;
 ; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                  ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/10/2020 09:44:48 ;
+; Start date & time ; 12/10/2020 10:12:35 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; projet              ;
 +-------------------+---------------------+
@@ -75,18 +75,18 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 0.160761148838310                     ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 0.160761315440409                     ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                              ; --            ; proc_mips   ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; proc_mips   ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; proc_mips   ; Top            ;
+; PARTITION_COLOR                     ; 16764057                              ; --            ; datapath    ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; datapath    ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; datapath    ; Top            ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --             ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --             ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; proc_mips                             ; projet        ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; datapath                              ; projet        ; --          ; --             ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 
 
@@ -95,12 +95,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 599 MB              ; 00:00:06                           ;
-; Fitter                    ; 00:00:32     ; 1.0                     ; 730 MB              ; 00:00:32                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 555 MB              ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 556 MB              ; 00:00:02                           ;
+; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 601 MB              ; 00:00:06                           ;
+; Fitter                    ; 00:00:29     ; 1.0                     ; 733 MB              ; 00:00:29                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 561 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 559 MB              ; 00:00:03                           ;
 ; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 805 MB              ; 00:00:02                           ;
-; Total                     ; 00:00:45     ; --                      ; --                  ; 00:00:45                           ;
+; Total                     ; 00:00:43     ; --                      ; --                  ; 00:00:43                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

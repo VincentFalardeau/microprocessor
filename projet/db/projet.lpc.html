@@ -16,7 +16,7 @@
 <TH>Output only Bidir</TH>
 </TR>
 <TR >
-<TD >dp|mainalu</TD>
+<TD >mainalu</TD>
 <TD >70</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -32,7 +32,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >dp|srcbmux</TD>
+<TD >srcbmux|finalmux</TD>
 <TD >65</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -48,7 +48,71 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >dp|se</TD>
+<TD >srcbmux|highmux</TD>
+<TD >65</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >32</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >srcbmux|lowmux</TD>
+<TD >65</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >32</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >srcbmux</TD>
+<TD >130</TD>
+<TD >32</TD>
+<TD >0</TD>
+<TD >32</TD>
+<TD >32</TD>
+<TD >32</TD>
+<TD >32</TD>
+<TD >32</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >ze</TD>
+<TD >16</TD>
+<TD >16</TD>
+<TD >0</TD>
+<TD >16</TD>
+<TD >32</TD>
+<TD >16</TD>
+<TD >16</TD>
+<TD >16</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >se</TD>
 <TD >16</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -64,7 +128,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >dp|resmux</TD>
+<TD >resmux</TD>
 <TD >65</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -80,7 +144,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >dp|wrmux</TD>
+<TD >wrmux</TD>
 <TD >11</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -96,7 +160,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >dp|rf</TD>
+<TD >rf</TD>
 <TD >49</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -112,7 +176,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >dp|pcmux|finalmux</TD>
+<TD >pcmux|finalmux</TD>
 <TD >65</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -128,7 +192,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >dp|pcmux|highmux</TD>
+<TD >pcmux|highmux</TD>
 <TD >65</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -144,7 +208,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >dp|pcmux|lowmux</TD>
+<TD >pcmux|lowmux</TD>
 <TD >65</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -160,7 +224,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >dp|pcmux</TD>
+<TD >pcmux</TD>
 <TD >130</TD>
 <TD >34</TD>
 <TD >0</TD>
@@ -176,7 +240,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >dp|pcbrmux</TD>
+<TD >pcbrmux</TD>
 <TD >65</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -192,7 +256,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >dp|pcadd2</TD>
+<TD >pcadd2</TD>
 <TD >64</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -208,7 +272,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >dp|immsh</TD>
+<TD >immsh</TD>
 <TD >32</TD>
 <TD >2</TD>
 <TD >2</TD>
@@ -224,7 +288,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >dp|pcadd1</TD>
+<TD >pcadd1</TD>
 <TD >64</TD>
 <TD >32</TD>
 <TD >0</TD>
@@ -240,76 +304,12 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >dp|pcreg</TD>
+<TD >pcreg</TD>
 <TD >34</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >32</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
-<TD >dp</TD>
-<TD >79</TD>
-<TD >0</TD>
-<TD >6</TD>
-<TD >0</TD>
-<TD >97</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
-<TD >cont|ad</TD>
-<TD >8</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >6</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
-<TD >cont|md</TD>
-<TD >12</TD>
-<TD >1</TD>
-<TD >2</TD>
-<TD >1</TD>
-<TD >10</TD>
-<TD >1</TD>
-<TD >1</TD>
-<TD >1</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
-<TD >cont</TD>
-<TD >13</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >14</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
