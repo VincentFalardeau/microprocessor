@@ -9,7 +9,7 @@ entity datapath is -- MIPS datapath
 			regwrite: in STD_LOGIC;
 			jump: in STD_LOGIC_VECTOR(1 downto 0);
 			alucontrol: in STD_LOGIC_VECTOR (5 downto 0);
-			zero, overflow: out STD_LOGIC;
+			zero, neg, overflow: out STD_LOGIC;
 			pc: buffer STD_LOGIC_VECTOR (31 downto 0);
 			instr: in STD_LOGIC_VECTOR(31 downto 0);
 			aluout, writedata: buffer STD_LOGIC_VECTOR (31 downto 0);
@@ -20,7 +20,7 @@ architecture struct of datapath is
 	component alu
 		port(	a, b: in STD_LOGIC_VECTOR(31 downto 0);
 				f: in STD_LOGIC_VECTOR (5 downto 0);
-				z, o : out STD_LOGIC;
+				z, neg, o : out STD_LOGIC;
 				y: buffer STD_LOGIC_VECTOR(31 downto 0));
 	end component;
 	component regfile
@@ -83,5 +83,5 @@ begin
 	ze: zeroext port map(instr(15 downto 0), zeroimm);
 -- ALU logic
 	srcbmux: mux4 generic map (32) port map(writedata, signimm, zeroimm, X"00000000", alusrc, srcb);
-	mainalu: alu port map(srca, srcb, alucontrol, zero, overflow, aluout);
+	mainalu: alu port map(srca, srcb, alucontrol, zero, neg, overflow, aluout);
 end;
